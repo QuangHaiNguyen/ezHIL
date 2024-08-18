@@ -106,7 +106,7 @@ int main(void)
 
   /* USER CODE END 2 */
 
-  MX_ThreadX_Init();
+  //MX_ThreadX_Init();
 
   /* We should never get here as control is now taken by the scheduler */
 
@@ -114,6 +114,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    HAL_UART_Transmit(&huart3, "hello\n", 6, 1000);
+    HAL_Delay(2000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
