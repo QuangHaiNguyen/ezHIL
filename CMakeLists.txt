@@ -23,6 +23,7 @@ set(CMAKE_PROJECT_NAME ezHIL)
 
 # Include toolchain file
 include("cmake/gcc-arm-none-eabi.cmake")
+include(features.cmake)
 
 # Enable compile command to ease indexing with e.g. clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
@@ -39,6 +40,7 @@ add_executable(${CMAKE_PROJECT_NAME})
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
+add_subdirectory(EasyEmbeddedFramework)
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
@@ -63,6 +65,6 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
-
+    easy_embedded_lib
     # Add user defined libraries
 )

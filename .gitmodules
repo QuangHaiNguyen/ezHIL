@@ -1,0 +1,3 @@
+[submodule "EasyEmbeddedFramework"]
+	path = EasyEmbeddedFramework
+	url = https://github.com/QuangHaiNguyen/EasyEmbeddedFramework.git
